@@ -13,6 +13,8 @@ import com.sh1p1lov.multitouch.view.R
 import kotlin.math.max
 import kotlin.random.Random
 
+typealias OnCountTouchesUpdated = (touchCount: Int) -> Unit
+
 class MultiTouchView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -70,15 +72,33 @@ class MultiTouchView @JvmOverloads constructor(
     private val touches = mutableMapOf<Int, PointF>()
     private val touchesColors = mutableMapOf<Int, Int>()
 
+    private val onCountTouchesUpdatedListeners = mutableSetOf<OnCountTouchesUpdated>()
+
+    fun addOnCountTouchesUpdatedListener(l: OnCountTouchesUpdated) {
+        onCountTouchesUpdatedListeners.add(l)
+    }
+
+    fun removeOnCountTouchesUpdatedListener(l: OnCountTouchesUpdated) {
+        onCountTouchesUpdatedListeners.remove(l)
+    }
+
+    private fun invokeOnCountTouchesUpdatedListeners(touchCount: Int) {
+        onCountTouchesUpdatedListeners.forEach {
+            it.invoke(touchCount)
+        }
+    }
+
     private fun addTouch(touchId: Int, point: PointF) {
         touchesColors[touchId] = if (isRandomTouchColor) randomColor() else touchColor
         touches[touchId] = point
+        invokeOnCountTouchesUpdatedListeners(touchCount = touches.size)
         invalidate()
     }
 
     private fun removeTouch(touchId: Int) {
         touches.remove(touchId)
         touchesColors.remove(touchId)
+        invokeOnCountTouchesUpdatedListeners(touchCount = touches.size)
         invalidate()
     }
 
@@ -90,6 +110,7 @@ class MultiTouchView @JvmOverloads constructor(
     private fun clearTouches() {
         touches.clear()
         touchesColors.clear()
+        invokeOnCountTouchesUpdatedListeners(touchCount = 0)
         invalidate()
     }
 
