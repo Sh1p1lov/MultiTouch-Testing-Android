@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MultiTouchView">
+        <attr name="isRandomTouchColor" format="boolean"/>
+        <attr name="touchColor" format="color"/>
+        <attr name="touchStrokeWidth" format="dimension"/>
+        <attr name="touchRadius" format="dimension"/>
+        <attr name="touchLightingWidth" format="dimension"/>
+    </declare-styleable>
+</resources>
