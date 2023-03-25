@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MultiTouch-Testing-Android</string>
+    <string name="app_name">MultiTouch Test</string>
     <string name="initial_touch_count">0</string>
     <string name="max_touches_title">Max touches:</string>
 </resources>
