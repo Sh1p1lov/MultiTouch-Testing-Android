@@ -1,4 +1,4 @@
-package com.sh1p1lov.multitouch_testing_android
+package com.sh1p1lov.multitouchtest
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

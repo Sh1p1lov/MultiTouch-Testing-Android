@@ -1,4 +1,4 @@
-package com.sh1p1lov.multitouch_testing_android
+package com.sh1p1lov.multitouchtest
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

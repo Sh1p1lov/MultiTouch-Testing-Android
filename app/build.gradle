@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.sh1p1lov.multitouch_testing_android'
+    namespace 'com.sh1p1lov.multitouchtest'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.sh1p1lov.multitouch_testing_android"
+        applicationId "com.sh1p1lov.multitouchtest"
         minSdk 21
         targetSdk 33
         versionCode 1

@@ -1,4 +1,4 @@
-package com.sh1p1lov.multitouch_testing_android
+package com.sh1p1lov.multitouchtest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.ViewModelProvider
-import com.sh1p1lov.multitouch_testing_android.databinding.ActivityMainBinding
+import com.sh1p1lov.multitouchtest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
