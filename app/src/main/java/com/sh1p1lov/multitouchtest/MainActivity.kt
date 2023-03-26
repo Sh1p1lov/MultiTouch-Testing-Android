@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.tryUpdateMaxTouchCount(touchCount)
         }
 
-        viewModel.maxTouchCountLiveData.observe(this) { maxTouchCount ->
+        viewModel.maxTouchCount.observe(this) { maxTouchCount ->
             binding.tvMaxTouchCount.text = maxTouchCount.toString()
         }
     }

@@ -6,12 +6,12 @@ import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel: ViewModel() {
 
-    private val maxTouchCountMutableLiveData = MutableLiveData<Int>(0)
-    val maxTouchCountLiveData: LiveData<Int> = maxTouchCountMutableLiveData
+    private val _maxTouchCount = MutableLiveData<Int>(0)
+    val maxTouchCount: LiveData<Int> = _maxTouchCount
 
     fun tryUpdateMaxTouchCount(touchCount: Int) {
-        if (touchCount > maxTouchCountLiveData.value!!) {
-            maxTouchCountMutableLiveData.value = touchCount
+        if (touchCount > maxTouchCount.value!!) {
+            _maxTouchCount.value = touchCount
         }
     }
 }
